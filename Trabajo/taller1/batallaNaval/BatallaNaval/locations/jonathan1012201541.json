@@ -1,0 +1,27 @@
+{
+    "Portaviones": {
+        "x": 5,
+        "y": 1,
+        "direction": "E"
+    },
+    "Acorazado": {
+        "x": 4,
+        "y": 6,
+        "direction": "E"
+    },
+    "Crucero": {
+        "x": 2,
+        "y": 8,
+        "direction": "E"
+    },
+    "Submarino": {
+        "x": 7,
+        "y": 9,
+        "direction": "E"
+    },
+    "Destructor": {
+        "x": 4,
+        "y": 3,
+        "direction": "E"
+    }
+}
