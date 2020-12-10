@@ -1,12 +1,12 @@
 {
     "jonathan": {
-        "wins": 1,
+        "wins": 2,
         "losses": 0,
         "minShots": 58
     },
     "Maquina": {
         "wins": 0,
-        "losses": 2,
+        "losses": 3,
         "minShots": 101
     },
     "juan": {
