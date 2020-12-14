@@ -1,7 +1,3 @@
-# Python 3 and Tkinter Battleship imitation
-# Made by Miguel Soto
-# Finished 14/11/2019
-
 from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
@@ -12,6 +8,7 @@ import json
 from datetime import datetime
 import os
 import numpy as np
+import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import animatplot as amp
 import self as self
@@ -257,12 +254,6 @@ def checkWin(player1, player2):
         # Si no, devuelve falso
         return False
 
-    if opc == 1:
-
-        self.animation1()
-    else:
-        self.animation2()
-
 
 '''
 Funcion para la animacion 1
@@ -274,7 +265,24 @@ def animation1(self):
     t = np.linspace(0, 1, 20)
 
     X, T = np.meshgrid(x, t)
-    Y = np.tan(2 * np.pi * (X + T))
+    Y = np.tan(3 * np.pi * (X + T))
+
+    block = amp.blocks.Line(x, Y, marker="", linestyle="-", color="r")
+    anim = amp.Animation([block])
+    animation.show()
+
+
+'''
+Funcion para la animacion 2
+'''
+
+
+def animation2(self):
+    x = np.linspace(0, 1, 50)
+    t = np.linspace(0, 1, 20)
+
+    X, T = np.meshgrid(x, t)
+    Y = np.tan(3 * np.pi * (X + T))
 
     block = amp.blocks.Line(x, Y, marker="", linestyle="-", color="r")
     anim = amp.Animation([block])
