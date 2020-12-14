@@ -1,13 +1,13 @@
 {
     "jonathan": {
-        "wins": 4,
+        "wins": 5,
         "losses": 0,
         "minShots": 58
     },
     "Maquina": {
-        "wins": 0,
-        "losses": 9,
-        "minShots": 101
+        "wins": 1,
+        "losses": 16,
+        "minShots": 96
     },
     "juan": {
         "wins": 1,
@@ -33,5 +33,35 @@
         "wins": 1,
         "losses": 0,
         "minShots": 66
+    },
+    "prueba3": {
+        "wins": 2,
+        "losses": 0,
+        "minShots": 57
+    },
+    "prueba4": {
+        "wins": 1,
+        "losses": 0,
+        "minShots": 58
+    },
+    "prueba5": {
+        "wins": 1,
+        "losses": 0,
+        "minShots": 65
+    },
+    "steven ": {
+        "wins": 1,
+        "losses": 0,
+        "minShots": 58
+    },
+    "player1": {
+        "wins": 0,
+        "losses": 1,
+        "minShots": 101
+    },
+    "jonathan1": {
+        "wins": 1,
+        "losses": 0,
+        "minShots": 56
     }
 }

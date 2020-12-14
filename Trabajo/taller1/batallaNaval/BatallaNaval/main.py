@@ -1,21 +1,17 @@
-from tkinter import *
-from tkinter import messagebox
-from tkinter import filedialog
-import tkinter.ttk as ttk
-from random import randint
-from functools import partial
 import json
-from datetime import datetime
 import os
-import sys
+import tkinter.ttk as ttk
+from datetime import datetime
+from functools import partial
+from random import randint
+from tkinter import *
+from tkinter import filedialog
+from tkinter import messagebox
+
+import animatplot as amp
 import matplotlib.pyplot as plt
 import numpy as np
-
-import matplotlib.animation as animation
-import animatplot as amp
-import opc as opc
 import self as self
-
 from playerClass import Player
 from tileStatesClass import TileStates
 
@@ -268,11 +264,11 @@ def animation1(self):
     t = np.linspace(0, 1, 20)
 
     X, T = np.meshgrid(x, t)
-    Y = np.tan(3 * np.pi * (X + T))
+    Y = np.tan(2 * np.euler_gamma * 2 * (X + T))
 
-    block = amp.blocks.Line(x, Y, marker="", linestyle="-", color="r")
+    block = amp.blocks.Line(x, Y, marker=".", linestyle="-", color="r")
     anim = amp.Animation([block])
-    animation.show()
+    plt.show()
 
 
 '''
@@ -285,11 +281,11 @@ def animation2(self):
     t = np.linspace(0, 1, 20)
 
     X, T = np.meshgrid(x, t)
-    Y = np.tan(3 * np.pi * (X + T))
+    Y = np.tan(2 * np.pi * 2 * (X + T))
 
-    block = amp.blocks.Line(x, Y, marker="", linestyle="-", color="r")
+    block = amp.blocks.Line(x, Y, marker=".", linestyle="-", color="r")
     anim = amp.Animation([block])
-    animation.show()
+    plt.show()
 
 
 '''
@@ -317,12 +313,13 @@ def fireEventButtons(player1, player2, x, y):
         # Falta agregar foto de cuando gane el jugador 1
         if checkWin(player1, player2):
             messagebox.showinfo("Resultados", "El ganador es " + player1.name + "!")
+            # Graficacion de animacion para player1
             animation1(self)
             # Luego de cerrar el mensaje, vuelve al menu de inicio
             restartGame(player1, player2)
 
         # Recibe las coordenadas para el jugador player2
-        # Falta agregar foto de cuando gane el jugador 2
+        # Realiza la grafica cuando sea player1 o player2 gane
         coords = getCoords(player2)
         # Las seguira generando mientras estas no sean validas
         while not ((coords[0] in range(10)) and (coords[1] in range(10))
@@ -336,12 +333,15 @@ def fireEventButtons(player1, player2, x, y):
         # Revisa si el jugador player2 gano la partida
         if checkWin(player2, player1):
             messagebox.showinfo("Resultados", "El ganador es " + player2.name + "!")
+            # Graficacion de animacion para player2
             animation2(self)
             # Luego de cerrar el mensaje, vuelve al menu de inicio
             restartGame(player1, player2)
     else:
-        # Si las coordenadas son incorrectas, muestra un mensaje de rror
+        # Si las coordenadas son incorrectas, muestra un mensaje de error
         messagebox.showerror("Error", "Coordenadas incorrectas")
+
+
 '''
 
 if opc == 1:
