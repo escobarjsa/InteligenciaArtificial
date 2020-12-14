@@ -11,6 +11,10 @@ from functools import partial
 import json
 from datetime import datetime
 import os
+import numpy as np
+import matplotlib.animation as animation
+import animatplot as amp
+import self as self
 
 from playerClass import Player
 from tileStatesClass import TileStates
@@ -253,6 +257,29 @@ def checkWin(player1, player2):
         # Si no, devuelve falso
         return False
 
+    if opc == 1:
+
+        self.animation1()
+    else:
+        self.animation2()
+
+
+'''
+Funcion para la animacion 1
+'''
+
+
+def animation1(self):
+    x = np.linspace(0, 1, 50)
+    t = np.linspace(0, 1, 20)
+
+    X, T = np.meshgrid(x, t)
+    Y = np.tan(2 * np.pi * (X + T))
+
+    block = amp.blocks.Line(x, Y, marker="", linestyle="-", color="r")
+    anim = amp.Animation([block])
+    animation.show()
+
 
 '''
 Funcion para manejar el evento de disparar, se usara en un boton de la interfaz
@@ -279,6 +306,7 @@ def fireEventButtons(player1, player2, x, y):
         # Falta agregar foto de cuando gane el jugador 1
         if checkWin(player1, player2):
             messagebox.showinfo("Resultados", "El ganador es " + player1.name + "!")
+            animation1(self)
             # Luego de cerrar el mensaje, vuelve al menu de inicio
             restartGame(player1, player2)
 
@@ -947,7 +975,7 @@ jsonLoadButton = Button(window, text="Cargar ubicaciones",
                         command=partial(placeJson, player, machine))
 
 # Componentes para mostrar el ranking
-rankingMessage = Label(window, text="Top 5")
+rankingMessage = Label(window, text="Los 5 mejores jugadores")
 rankingLabels = [Label(window), Label(window), Label(window), Label(window), Label(window)]
 
 # Muestra la pantalla de inicio

@@ -1,17 +1,27 @@
 {
     "jonathan": {
-        "wins": 2,
+        "wins": 4,
         "losses": 0,
         "minShots": 58
     },
     "Maquina": {
         "wins": 0,
-        "losses": 3,
+        "losses": 7,
         "minShots": 101
     },
     "juan": {
         "wins": 1,
         "losses": 0,
         "minShots": 61
+    },
+    "1111": {
+        "wins": 1,
+        "losses": 0,
+        "minShots": 55
+    },
+    "": {
+        "wins": 1,
+        "losses": 0,
+        "minShots": 64
     }
 }
