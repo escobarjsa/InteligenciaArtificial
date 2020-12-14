@@ -11,6 +11,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import animatplot as amp
+import opc as opc
 import self as self
 
 from playerClass import Player
@@ -288,6 +289,11 @@ def animation2(self):
     anim = amp.Animation([block])
     animation.show()
 
+    if opc == 1:
+        self.animation1()
+    else:
+        self.animation2()
+
 
 '''
 Funcion para manejar el evento de disparar, se usara en un boton de la interfaz
@@ -314,7 +320,7 @@ def fireEventButtons(player1, player2, x, y):
         # Falta agregar foto de cuando gane el jugador 1
         if checkWin(player1, player2):
             messagebox.showinfo("Resultados", "El ganador es " + player1.name + "!")
-            animation1(self)
+            # animation1(self)
             # Luego de cerrar el mensaje, vuelve al menu de inicio
             restartGame(player1, player2)
 

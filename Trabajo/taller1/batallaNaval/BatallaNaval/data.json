@@ -6,7 +6,7 @@
     },
     "Maquina": {
         "wins": 0,
-        "losses": 8,
+        "losses": 9,
         "minShots": 101
     },
     "juan": {
@@ -28,5 +28,10 @@
         "wins": 1,
         "losses": 0,
         "minShots": 90
+    },
+    "prueba2": {
+        "wins": 1,
+        "losses": 0,
+        "minShots": 66
     }
 }
