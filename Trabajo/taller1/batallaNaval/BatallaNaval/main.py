@@ -7,8 +7,10 @@ from functools import partial
 import json
 from datetime import datetime
 import os
-import numpy as np
+import sys
 import matplotlib.pyplot as plt
+import numpy as np
+
 import matplotlib.animation as animation
 import animatplot as amp
 import opc as opc
@@ -289,11 +291,6 @@ def animation2(self):
     anim = amp.Animation([block])
     animation.show()
 
-    if opc == 1:
-        self.animation1()
-    else:
-        self.animation2()
-
 
 '''
 Funcion para manejar el evento de disparar, se usara en un boton de la interfaz
@@ -320,7 +317,7 @@ def fireEventButtons(player1, player2, x, y):
         # Falta agregar foto de cuando gane el jugador 1
         if checkWin(player1, player2):
             messagebox.showinfo("Resultados", "El ganador es " + player1.name + "!")
-            # animation1(self)
+            animation1(self)
             # Luego de cerrar el mensaje, vuelve al menu de inicio
             restartGame(player1, player2)
 
@@ -339,13 +336,19 @@ def fireEventButtons(player1, player2, x, y):
         # Revisa si el jugador player2 gano la partida
         if checkWin(player2, player1):
             messagebox.showinfo("Resultados", "El ganador es " + player2.name + "!")
+            animation2(self)
             # Luego de cerrar el mensaje, vuelve al menu de inicio
             restartGame(player1, player2)
     else:
         # Si las coordenadas son incorrectas, muestra un mensaje de rror
         messagebox.showerror("Error", "Coordenadas incorrectas")
+'''
 
-
+if opc == 1:
+    animation1(self)
+else:
+    animation2(self)
+'''
 '''
 Funcion que no hace nada
 '''
